@@ -25,7 +25,8 @@ let header = out({
 
 let divider1 = out({
   select: "#root",
-  elem: "hr"
+  elem: "hr",
+  id: "divider"
 });
 
 let bio_list = out({
@@ -34,12 +35,13 @@ let bio_list = out({
   id: "bio-list"
 });
 
-let bio_list_data = ["RENZTER ARIZALA's Property", "Qubonic QA&S", "Master web developer"];
+let bio_list_data = ["RENZTER ARIZALA's Property", "Qubonic A&S", "Master web developer"];
 
 for(r=0; r<bio_list_data.length; r++) {
   let bl_data_list = out({
     select: "#bio-list",
     elem: "li",
+    id: "bio"+r,
     text: bio_list_data[r]
   });
 }
@@ -104,6 +106,13 @@ for(r=0; r<social_links_name_list.length; r++) {
 
 let footer = out({
   select: "#root",
-  elem: "h6",
+  elem: "p",
+  id: "footer",
   text: "This website implements with Flanx Quikker a JavaScript library which you can write HTML element s and styling using CSS rules using with object properties"
+},
+{
+  stylesheet: {
+    id: "#footer",
+    size: "12px"
+  }
 });
