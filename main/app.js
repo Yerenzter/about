@@ -4,7 +4,7 @@ let hString = ["Coding", "Chat w/ my dear", "Playing chess & video games", "Read
 
 let slnString = ["Yerenzter", "Yandex Mail", "Facebook", "Instagram", "YouTube", "Itch", "Soundcloud", "VK"];
 
-let sllString = ["https://www.yerenzter.tk", "mailto@:yerenzter@yandex.com", "https://facebook.com/yerenzter", "https://instagram.com/yer2003.umi10", "https://youtube.com/@yerenzter", "https://yer2003.itch.io", "https://soundcloud.com/yer2003", "https://vk com/yerenzter"];
+let sllString = ["https://www.yerenzter.tk", "mailto:yerenzter@yandex.com", "https://facebook.com/yerenzter", "https://instagram.com/yer2003.umi10", "https://youtube.com/@yerenzter", "https://yer2003.itch.io", "https://soundcloud.com/yer2003", "https://vk com/yerenzter"];
 
 let titleHead0 = {
     html: {
