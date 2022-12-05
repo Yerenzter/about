@@ -1,118 +1,113 @@
-let root = out({
-  select: "#root"
-},
-{
-  stylesheet: {
-    id: "#root",
-    margin: "1em",
-    border: "solid #242424 1px",
-    radius: "12px"
-  }
-});
+let alString = ["RENZTER ARIZALA PROPERTY!", "Qubonic A & S Developer", "Master web developer"];
 
-let header = out({
-  select: "#root",
-  elem: "h1",
-  id: "header",
-  text: "Hi I'm Yerenzter!"
-},
-{
-  stylesheet: {
-    id: "#header",
-    size: "64px"
-  }
-});
+let hString = ["Coding", "Chat w/ my dear", "Playing chess & video games", "Reading books & magazines", "Watching", "Trekking", "Graphic Designing", "Riding motorcycle", "Taking picture", "Eating", "Sleeping"];
 
-let divider1 = out({
-  select: "#root",
-  elem: "hr",
-  id: "divider"
-});
+let slnString = ["Yerenzter", "Yandex Mail", "Facebook", "Instagram", "YouTube", "Itch", "Soundcloud", "VK"];
 
-let bio_list = out({
-  select: "#root",
-  elem: "ul",
-  id: "bio-list"
-});
+let sllString = ["https://www.yerenzter.tk", "mailto@:yerenzter@yandex.com", "https://facebook.com/yerenzter", "https://instagram.com/yer2003.umi10", "https://youtube.com/@yerenzter", "https://yer2003.itch.io", "https://soundcloud.com/yer2003", "https://vk com/yerenzter"];
 
-let bio_list_data = ["RENZTER ARIZALA's Property", "Qubonic A&S", "Master web developer"];
+let titleHead0 = {
+    html: {
+        elem: "h1",
+        text: "About Me!"
+    }
+};
 
-for(r=0; r<bio_list_data.length; r++) {
-  let bl_data_list = out({
-    select: "#bio-list",
-    elem: "li",
-    id: "bio"+r,
-    text: bio_list_data[r]
-  });
-}
+let aboutList = {
+    html: {
+        elem: "ul",
+        id: "about-list"
+    }
+};
 
-let intro = out({
-  select: "#root",
-  elem: "p",
-  text: "Hi, I'm Yerenzter the software developer and founder of Qubonic Arts & Software, AYCQ. formerly known as Gladiolus Interactive Lab. A young Filipino student, mentor & casual coder and a student from CCS-BSIT of University of Antique."
-});
+let renderAboutList = () => {
+    loop(0, alString.length, () => {
+        out({
+            html: {
+                select: "about-list",
+                elem: "li",
+                text: alString[r]
+            }
+        });
+    });
+};
 
-let hobbies = out({
-  select: "#root",
-  elem: "h3",
-  text: "Hobbies"
-});
+let biograph = {
+    html: {
+        elem: "p",
+        text: "Hi, I'm Yerenzter the software developer and founder of Qubonic Arts & Software, AYCQ. formerly known as Gladiolus Interactive Lab. A young Filipino student, mentor & casual coder and a student from CCS-BSIT of University of Antique."
+    }
+};
 
-let hobby_list = ["Coding", "Chat with my Dear", "Playing chess & video games", "Reading books & magazines", "Watching", "Trekking", "Graphic designing", "Riding motocycle", "Taking picture", "Eating", "Sleeping"];
+let titleHead1 = {
+    html: {
+        elem: "h2",
+        text: "Hobbies"
+    }
+};
 
-let hobby_list_name= out({
-  select:"#root",
-  elem: "ul",
-  id: "hobby"
-});
+let hobbyList = {
+    html: {
+        elem: "ul",
+        id: "hobby-list"
+    }
+};
 
-for(r=0; r<hobby_list.length; r++) {
-  let hobby_list_data = out({
-  select: "#hobby",
-  elem: "li",
-  text: hobby_list[r]
-});
-}
+let renderHobbyList = () => {
+    loop(0, hString.length, ()=> {
+        out({
+            html: {
+                select: "hobby-list",
+                elem: "li",
+                text: hString[r]
+            }
+        });
+    });
+};
 
-let social_links = out({
-  select: "#root",
-  elem: "h3",
-  text: "Social Links"
-});
+let titleHead2 = {
+    html: {
+        elem: "h1",
+        text: "Social Links"
+    }
+};
 
-let social_links_name_list = ["Yerenzter", "Yandex Mail", "GitHub", "Facebook", "Instagram", "YouTube", "Itch", "Soundcloud", "VK"];
+let socialLinkList = {
+    html: {
+        elem: "ul",
+        id: "social-link-list"
+    }
+};
 
-let social_links_list = ["https://yerenzter.github.io", "mailto:yerenzter@yandex.com", "https://github.com/Yerenzter", "https://facebook.com/yerenzter", "https://instagram.com/yer2003.umi10", "https://youtube.com/channel/UCZPtBbdCU-mha5BMWZrdK9A", "https://yer2003.itch.io", "https://soundcloud.com/yer2003", "https://vk.com/yerenzter"];
+let renderSocialLinkList = () => {
+    loop(0, slnString.length, () => {
+        out({
+            html: {
+                select: "social-link-list",
+                elem: "li",
+                id: `social-link${r}`
+            }
+        });
 
-let social_links_name = out({
-  select: "#root",
-  elem: "ul",
-  id: "social"
-});
+        out({
+            html: {
+                select: `social-link${r}`,
+                elem: "a",
+                text: slnString[r],
+                href: sllString[r]
+            }
+        });
+    });
+};
 
-for(r=0; r<social_links_name_list.length; r++) {
-  let social_links_ao = out({
-    select: "#social",
-    elem: "li",
-    id: "link"+r
-});
-  let social_links_ai = out({
-    select: "#link"+r,
-    elem: "a",
-    href: social_links_list[r],
-    text: social_links_name_list[r]
-  });
-}
+render([titleHead0,
+    aboutList,
+    biograph,
+    titleHead1,
+    hobbyList,
+    titleHead2,
+    socialLinkList], root);
 
-let footer = out({
-  select: "#root",
-  elem: "p",
-  id: "footer",
-  text: "This website implements with Flanx Quikker a JavaScript library which you can write HTML element s and styling using CSS rules using with object properties"
-},
-{
-  stylesheet: {
-    id: "#footer",
-    size: "12px"
-  }
-});
+renderAboutList(); renderAboutList();
+renderHobbyList();
+renderSocialLinkList();
