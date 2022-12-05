@@ -67,7 +67,7 @@ let renderHobbyList = () => {
 
 let titleHead2 = {
     html: {
-        elem: "h1",
+        elem: "h2",
         text: "Social Links"
     }
 };
